@@ -5,7 +5,7 @@
 %% UPDATE these variables:
 \renewcommand{\hwnum}{1}
 \title{Advanced Algorithms, Homework 1}
-\author{TODO-Your Name Here}
+\author{Olivia Firth}
 \collab{n/a}
 \date{due: 27 August 2020}
 
@@ -29,23 +29,32 @@ Answer the following questions:
 \begin{enumerate}
     \item What is your elevator pitch?  Describe yourself in 1-2
                 sentences.
+                \newline \textbf{I am a computer science graduate student with a background in mathematics, focusing on education. In my free time, I enjoy 
+                climbing, biking, skiing, and making art.}
     \item What was your favorite CS class so far, and why?
+    \newline \textbf{Computer Science Theory. This was my favorite course because it provided a fun connection 
+    between my math background and computer science. I also really enjoy the way Sean Yaw teaches. }
     \item What was your least favorite CS class so far, and why?
+    \newline \textbf{My least favorite course was Computer Systems. I don't think this was a fault of the course, but I struggled 
+    to get as much out of it as I probably could because I was simultaneously trying to teach myself C++.}
     \item Why are you interested in taking this course?
+    \newline \textbf{It seemed like an interesting exploration of the mathematically thinking behind computer science.}
     \item What is your biggest academic or research goal for this semester (can
         be related to this course or not)?
+        \newline \textbf{My biggest goal this semester is to determine a more clear direction for my graduate studies.}
     \item What do you want to do after you graduate?
+    \newline \textbf{I am interested in getting some teaching experience and potentially working on my Ph.D.}
     \item What was the most challenging aspect of your coursework last semester
         after the university transitioned to online?
+        \newline \textbf{I struggled to create structure for myself and also had a hard time learning without the ability to collaborate with other students or the professor in person. }
     \item What went well last semester for you after the university transitioned
         to online?
+        \newline \textbf{It is easier for me to focus on lectures when they are virtual and especially when they are recorded and I can go back to things that I may have missed. }
 \end{enumerate}
 
 \paragraph{Answer}
 
 % ============================================
-
-TODO: your answer goes between these lines
 
 % ============================================
 
@@ -65,7 +74,7 @@ Please do the following:
 
 % ============================================
 
-TODO: write a statement confirming you have completed these tasks.
+I have completed these tasks. 
 
 % ============================================
 
@@ -91,7 +100,11 @@ TODO: write a statement confirming you have completed these tasks.
 
 % ============================================
 
-TODO: your answer goes between these lines
+This is an instance of cheating more that plagiarism, but in eighth grade my math teacher stopped an exam because the kid sitting next to me 
+had apparently been looking at my test. I did not notice that it was happening, but my teacher did. It made me really uncomfortable and now I get a 
+little paranoid when I take tests in close quarters. I am glad that my teacher didn't accuse me of participating in the cheating by allowing my table-mate to copy. 
+I just remember being very surprised and confused. 
+
 
 % ============================================
 
@@ -105,7 +118,26 @@ exactly $n-1$ edges.
 
 % ============================================
 
-TODO: your answer goes between these lines
+We are to show that every tree with one or more nodes/vertices has exaclty $n-1$ edges. To do so we will use a 
+proof by induction. 
+
+Base case: We show that a tree $n = 1$ nodes, has $n - 1$ edges. For $n = 1$, this means our tree should have 
+zero edges. This must be true because an edge is defined as connecting two vertices (Nykamp). 
+
+Inductive Assumption: We assume that the statement is true for any tree with $n = k$ nodes.
+
+Inductive Step: We know that some tree with $k$ nodes has $k - 1$ edges. If we add a node to our tree,
+which now has $k + 1$ nodes, we must also add and edge because trees are by definition connected (Weisstein), bring our edges to a total of $k$. 
+So, our new tree has $k + 1$ nodes and $k$ edges. 
+
+Conclusion: $k + 1 - 1 = k$, therefore, our tree with $n = k + 1$ nodes has $n -1$ edges, and we have proven our statement to be true. 
+
+
+References: 
+\newline Nykamp DQ, “Edge definition.” From Math Insight. \url{http://mathinsight.org/definition/network_edge}
+
+ Weisstein, Eric W. "Tree." From MathWorld--A Wolfram Web Resource. \url{https://mathworld.wolfram.com/Tree.html}
+
 
 % ============================================
 
@@ -118,8 +150,24 @@ $O(n^2)$.
 \paragraph{Answer}
 
 % ============================================
+We are to show that $f(x)=n^2 + 3n +2$ is
+$O(n^2)$.
 
-TODO: your answer goes between these lines
+We have a function $f(x)=n^2 + 3n +2$ and some function $g(x) = n^2$, both defined on the same set of real numbers. 
+
+By the definition of big-O notation, $f(x) = O(g(x))$ as x goes to infinity, if and only if there exist constansts $N$ and 
+$C$ such that $|f(x)| \leq C|g(x)|$ for all $x > N$ (MIT). In other words, $f(x) = O(g(x))$ is only true if $f(x)$ never groes faster than $g(x)$. 
+
+$<===$
+\newline Let $N = 1$. Consider the case in which, $|f(x)| =  C|g(x)|$. This means for some $C$, $|n^2 + 3n +2| = C|n^2|$ and therefore, $ C = \frac{n^2 + 3n + 2}{n^2}$. Consider $n = 1$, in this case, $C = 6$.  When we consider any $x > N$ where we've declared $N = 1$, $\frac{n^2 + 3n + 2}{n^2}$ will always be less than 6. 
+As $n$ grows to infinity, the $n^2$ term grows progressively faster than $3n$, thus,  $C = 6$ satisfies our equation such that $|f(x)| \leq C|g(x)|$ for all $x > N$. 
+
+
+
+
+References: 
+
+\url{https://web.mit.edu/16.070/www/lecture/big_o.pdf} - I couldn't find an author for this source, but it seemed reliable. I refer to it as MIT in my solution. 
 
 % ============================================
 
@@ -138,7 +186,13 @@ Consider the \textsc{RightAngle} algorithm on page 8 of the textbook.
 
 % ============================================
 
-TODO: your answer goes between these lines
+\begin{enumerate}
+    \item The \textsc{RightAngle} solves the problem of how to construct a line perpendicular to an input line $l$ and passing through input point $P$, with just a compass and straight edge. 
+    \item We are to show that the while loop in \textsc{RightAngle} terminates. To prove that a while loop terminates we need to show that either the condition of the
+    the while loop is at some point false, that there is some kind of loop variant, or that it happens in constant time. Each step takes in a finite set of parameters to perform a single function. Therefore, because each 
+    step happens in constant time, the algorithm happens in constant time. Thus, the while loop must terminate at some point.  
+
+\end{enumerate}
 
 % ============================================
 
@@ -158,9 +212,26 @@ an even number.
 \paragraph{Answer}
 
 % ============================================
+\begin{enumerate}
+    \item An odd number is an integer of the the form n = 2k + 1, where k is an integer. (Weisstein)
+    \item An even number is an integer of the form n = 2k, where k is an interger. (Weisstein)
+    \item If $ab$ is not an even number, then neither $a$ or $b$ are even numbers. 
+    \item If $ab$ is an even number, then $a$ and $b$ are both even numbers. 
+    \item We are to show that If $a$ and $b$ are both even numbers, then $ab$ is
+    an even number.
 
-TODO: your answer goes between these lines.  Be sure to enumerate!
+    Suppose we have even numbers $a$ and $b$ such that $a = 2k$ and $b = 2j$ where $k$ and $j$ are both integers (satifsying the defiition of an even number).
 
+    Consider $a*b = 2*k*2*j$. Multiplication is commutative so we can make this $a*b = 2(2*k*j)$. We know that an integer multiplied by an integer is an integer, so let $x = 2*j*k$, where $x$ is an integer. 
+
+    We now have $a*b = 2*x$. This satifies the definition of an even number, therefore we have shown that if $a$ and $b$ are both even numbers, then $ab$ is
+    an even number.
+\end{enumerate}
+References: 
+
+Weisstein, Eric W. "Even Number." From MathWorld--A Wolfram Web Resource. \url{https://mathworld.wolfram.com/EvenNumber.html}
+
+Weisstein, Eric W. "Odd Number." From MathWorld--A Wolfram Web Resource. \url{https://mathworld.wolfram.com/OddNumber.html}
 % ============================================
 
 
